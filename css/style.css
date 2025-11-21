@@ -1,0 +1,334 @@
+/* =========================================
+   DEFINIÇÕES GLOBAIS E VARIÁVEIS
+   ========================================= */
+
+:root {
+    --cor-primaria: #dea300; /* Verde Floresta/Oliva (para o cabeçalho) */
+    --cor-destaque: #773c00; /* Ouro Suave (para títulos e links hover) */
+    --cor-secundaria: #b2a600; /* Cor para o botão de envio */
+    --cor-fundo: #f7f7f7; /* Creme/Branco Sujo (Fundo da Página) */
+    --cor-texto: #7f4a00; /* Cinza Escuro */
+    --fonte-principal: sans-serif; 
+    --fonte-titulo: serif; 
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do Corpo da Página */
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+}
+
+/* =========================================
+   ESTILOS DE CABEÇALHO E NAVEGAÇÃO
+   ========================================= */
+
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    flex-wrap: wrap; 
+}
+
+.header-logo-title {
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+}
+
+.logo {
+    height: 60px; 
+    width: auto; 
+}
+
+header h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.8em;
+    margin: 0; 
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 5px 0; 
+}
+
+nav a:hover,
+nav a.active { 
+    color: var(--cor-destaque);
+}
+
+/* =========================================
+   ESTILOS DE CONTEÚDO PRINCIPAL (MAIN)
+   ========================================= */
+
+main {
+    max-width: 1200px;
+    margin: 40px auto; 
+    padding: 20px;
+    background-color: white; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+main h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria); 
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--cor-destaque); 
+    padding-bottom: 10px;
+}
+
+/* Estilo para Títulos Secundários */
+section h3 {
+    color: var(--cor-destaque);
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* Estilo do Rodapé */
+footer {
+    background-color: var(--cor-primaria);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+}
+
+
+/* =========================================
+   ESTILOS ESPECÍFICOS DE PÁGINA
+   ========================================= */
+
+/* --- index.html (Notícias/Cartões) --- */
+.noticias-container {
+    display: flex; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+}
+
+.noticia-card {
+    flex: 1 1 45%; 
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* --- horarios.html (Tabela) --- */
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+}
+
+thead {
+    background-color: var(--cor-primaria); 
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd; 
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0f0f0; 
+}
+
+tbody tr:hover {
+    background-color: #e0e0e0; 
+    cursor: default;
+}
+
+/* --- horarios.html (Listas de Confissões) --- */
+#confissoes ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+#confissoes ul li {
+    background-color: var(--cor-fundo); 
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-left: 5px solid var(--cor-destaque); 
+    border-radius: 4px;
+}
+
+/* --- contato.html (Formulário e Layout) --- */
+.contact-layout {
+    display: flex; 
+    gap: 30px;     
+}
+
+.contact-layout section {
+    flex: 1; 
+}
+
+#formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+}
+
+#formulario label {
+    font-weight: bold;
+    color: var(--cor-destaque);
+    margin-top: 5px;
+}
+
+#formulario input[type="text"],
+#formulario input[type="email"],
+#formulario textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+#formulario button[type="submit"] {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#formulario button[type="submit"]:hover {
+    background-color: var(--cor-destaque); 
+}
+
+.map-placeholder {
+    height: 300px;
+    background-color: #e6e6e6; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.map-placeholder p {
+    color: #888;
+    font-style: italic;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE FIRST)
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+    
+    /* Cabeçalho */
+    header {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 15px;
+    }
+
+    .header-logo-title {
+        width: 100%; 
+        justify-content: center; 
+        margin-bottom: 10px; 
+    }
+
+    header h1 {
+        font-size: 1.5em; 
+    }
+
+    /* Navegação */
+    nav {
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+    }
+    
+    nav a {
+        display: block; 
+        margin: 5px 0; 
+        padding: 8px 0; 
+    }
+    
+    /* Contato */
+    .contact-layout {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    /* Notícias */
+    .noticia-card {
+        flex: 1 1 100%; 
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    /* Ajuste Geral do Container */
+    main {
+        margin: 20px 0; 
+        padding: 10px;
+        box-shadow: none; 
+        border-radius: 0; 
+    }
+
+    /* Transformação da Tabela (Mobile) */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%; 
+        text-align: right;
+    }
+
+    td::before {
+        content: attr(data-label); 
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+        color: var(--cor-primaria);
+    }
+}
